@@ -12,7 +12,7 @@ export const Register = () => {
         password: "",
     });
 
-    const {storetokenInLS, API} = useAuth();
+    const {storetokenInLS} = useAuth();
 
 
     const navigate = useNavigate();
@@ -26,7 +26,7 @@ export const Register = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${API}/api/auth/register`, {
+            const response = await fetch(`https://mern2024-backend.onrender.com/api/auth/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
