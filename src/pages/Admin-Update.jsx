@@ -15,7 +15,7 @@ export const AdminUpdate = () => {
 
     const getSingleUserData = async (id) => {
         try {
-            const response = await fetch(`${API}/api/admin/users/${id}`, {
+            const response = await fetch(`https://mern2024-backend.onrender.com/api/admin/users/${id}`, {
                 method: "GET",
                 headers: {
                     Authorization: authorizationToken,
@@ -47,7 +47,7 @@ export const AdminUpdate = () => {
         e.preventDefault();
     
         try {
-            const response = await fetch(`${API}/api/admin/users/update/${params.id}`, {
+            const response = await fetch(`https://mern2024-backend.onrender.com/api/admin/users/update/${params.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
