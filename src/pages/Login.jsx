@@ -15,7 +15,7 @@ export const Login =()=>{
         password: ""
     });
 
-    const {storetokenInLS, API} = useAuth();
+    const {storetokenInLS} = useAuth();
 
     const handleInput = (e)=>{
         const name = e.target.name;
@@ -33,7 +33,7 @@ export const Login =()=>{
     const handleSubmit = async (e)=>{
         e.preventDefault();
         try{
-           const response = await fetch(`${API}/api/auth/login`, {
+           const response = await fetch(`https://mern2024-backend.onrender.com/api/auth/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
