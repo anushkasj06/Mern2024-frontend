@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export const AdminUpdate = () => {
-    const { authorizationToken, API } = useAuth();
+    const { authorizationToken } = useAuth();
     const [data, setData] = useState({
         username: "",
         email: "",
