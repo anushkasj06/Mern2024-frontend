@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   const authorizationToken =  `Bearer ${token}`;
   const [isLoading , setIsLoading] = useState(true);
 
-  const API = import.meta.env.VITE_APP_URI_API;
+  
 
 
   const storetokenInLS = (servertoken) => {
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setIsLoading(true);
 
-      const response = await fetch(`${API}/api/auth/user`,
+      const response = await fetch(`https://mern2024-backend.onrender.com/api/auth/user`,
         {
           method: "GET",
           headers:{
@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }) => {
   const getServices = async () => {
     try {
       const response = await fetch(
-        `${API}/api/data/service`,
+        `https://mern2024-backend.onrender.com/api/data/service`,
         {
           method: "GET",
         }
@@ -90,7 +90,6 @@ export const AuthProvider = ({ children }) => {
         services,
         authorizationToken,
         isLoading,
-        API,
       }}
     >
       {children}
