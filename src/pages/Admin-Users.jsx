@@ -7,12 +7,12 @@ import {toast} from "react-toastify";
 
 
 export const AdminUsers = () => {
-    const { authorizationToken, API } = useAuth();
+    const { authorizationToken } = useAuth();
     const [users, setUsers] = useState([]);
 
     const getAllUserData = async () => {
         try {
-            const response = await fetch(`${API}/api/admin/users`, {
+            const response = await fetch(`https://mern2024-backend.onrender.com/api/admin/users`, {
                 method: "GET",
                 headers: {
                     Authorization: authorizationToken,
@@ -32,7 +32,7 @@ export const AdminUsers = () => {
 
     const deleteUser = async (id) => {
         try {
-            const response = await fetch(`${API}/api/admin/users/delete/${id}`, {
+            const response = await fetch(`https://mern2024-backend.onrender.com/api/admin/users/delete/${id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: authorizationToken,
